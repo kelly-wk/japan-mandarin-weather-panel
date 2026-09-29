@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#2C7A78">
+  <meta name="description" content="An audited yield-weather panel analysis using municipality-preserving splits and explicit forward prediction.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="日本の市町村別ミカン収量と気象のパネル分析 / Municipal Mandarin-Orange Yield–Weather Panel Analysis in Japan">
+  <meta property="og:description" content="An audited yield-weather panel analysis using municipality-preserving splits and explicit forward prediction.">
+  <meta property="og:url" content="https://kelly-wk.github.io/japan-mandarin-weather-panel/">
+  <meta property="og:image" content="https://kelly-wk.github.io/japan-mandarin-weather-panel/social-preview.svg">
+  <title>日本の市町村別ミカン収量と気象のパネル分析 / Municipal Mandarin-Orange Yield–Weather Panel Analysis in Japan</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="tier-public_case_study" style="--accent:#2C7A78;--accent-dark:#252A32;--accent-soft:#E3F0EF;--hero-start:#252A32">
+  <a class="skip-link" href="#content">本文へ / Skip to content</a>
+  <header class="project-hero">
+    <div class="hero-inner">
+      <div class="hero-topline">
+        <div class="eyebrow">
+          <span>都市・交通・地域データ分析 / Urban, Mobility &amp; Regional Analytics</span>
+        </div>
+        <p class="tier-badge"><span lang="ja">公開ケーススタディ</span><span lang="en">Public case study</span></p>
+      </div>
+      <h1><span lang="ja">日本の市町村別ミカン収量と気象のパネル分析</span><span lang="en">Municipal Mandarin-Orange Yield–Weather Panel Analysis in Japan</span></h1>
+      <div class="hero-summary">
+        <div class="copy-pair lede"><p lang="ja">市町村の反復観測を保った分割と将来予測を用い、収量と気象の関連を監査したパネル分析。</p><p class="translation" lang="en">An audited yield-weather panel analysis using municipality-preserving splits and explicit forward prediction.</p></div>
+        <div class="hero-facts">
+          <dl class="project-meta">
+            <div><dt>状態 / Status</dt><dd><span lang="ja">評価設計修復済み・数値結果非公開</span><span lang="en">Evaluation design repaired · numeric results withheld</span></dd></div>
+            <div><dt>言語 / Language</dt><dd>R</dd></div>
+          </dl>
+        </div>
+      </div>
+      <div class="method-block">
+        <p class="method-label">技術スタック / Tech Stack</p>
+        <ul class="method-list" aria-label="Methods"><li>R</li><li>Generalized additive models</li><li>Mixed-effects models</li><li>CAR(1) correlation</li><li>Municipality-grouped cross-validation</li><li>Forward validation</li><li>Train-fold orthogonalization</li></ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="content" class="shell">
+    
+    <section aria-labelledby="highlights-title">
+      <div class="section-heading"><p>01</p><h2 id="highlights-title">主なポイント <span lang="en">Highlights</span></h2></div>
+      <div class="highlight-grid"><article class="highlight">
+          <span class="highlight-number" aria-hidden="true">1</span>
+          <div class="copy-pair"><p lang="ja">市町村を分割単位として保持し、同一地域の情報漏洩を防止。</p><p class="translation" lang="en">Kept municipalities intact as the splitting unit to prevent same-area leakage.</p></div>
+        </article><article class="highlight">
+          <span class="highlight-number" aria-hidden="true">2</span>
+          <div class="copy-pair"><p lang="ja">ランダムホールドアウトと将来時点への外挿を別の検証課題として評価。</p><p class="translation" lang="en">Evaluated random holdout and forward extrapolation as distinct validation tasks.</p></div>
+        </article><article class="highlight">
+          <span class="highlight-number" aria-hidden="true">3</span>
+          <div class="copy-pair"><p lang="ja">気温との関連が仕様に敏感であることを保持し、因果効果として報告しない。</p><p class="translation" lang="en">Retained specification sensitivity in the temperature association and avoided a causal interpretation.</p></div>
+        </article></div>
+    </section>
+
+    <section aria-labelledby="flow-title">
+      <div class="section-heading"><p>02</p><h2 id="flow-title">研究の流れ <span lang="en">Research Flow</span></h2></div>
+      <ol class="flow-grid"><li class="flow-card" data-step="1">
+              <h3><span lang="ja">課題</span><span lang="en">Problem</span></h3>
+              <div class="copy-pair"><p lang="ja">市町村別収量と気象の関係を、地域内相関と時間外挿を考慮して評価する。</p><p class="translation" lang="en">Assess municipal yield-weather relationships while accounting for within-area dependence and temporal extrapolation.</p></div>
+            </li><li class="flow-card" data-step="2">
+              <h3><span lang="ja">方法</span><span lang="en">Method</span></h3>
+              <div class="copy-pair"><p lang="ja">GAMと相関構造付き混合モデルを構築し、訓練フォールド内で共線性を処理する。</p><p class="translation" lang="en">Fit GAM and correlation-aware mixed models, handling collinearity within training folds.</p></div>
+            </li><li class="flow-card" data-step="3">
+              <h3><span lang="ja">検証</span><span lang="en">Validation</span></h3>
+              <div class="copy-pair"><p lang="ja">市町村グループ交差検証と将来年ホールドアウトを分離して実施する。</p><p class="translation" lang="en">Run municipality-grouped cross-validation separately from future-year holdout.</p></div>
+            </li><li class="flow-card" data-step="4">
+              <h3><span lang="ja">成果</span><span lang="en">Outcome</span></h3>
+              <div class="copy-pair"><p lang="ja">評価設計を修復し、気象との関連がモデル仕様に依存することを明示した。</p><p class="translation" lang="en">Repaired the evaluation design and made the model dependence of weather associations explicit.</p></div>
+            </li></ol>
+    </section>
+
+    <section class="limitations" aria-labelledby="limits-title">
+      <div class="section-heading"><p>03</p><h2 id="limits-title">限界と適用範囲 <span lang="en">Limitations &amp; Scope</span></h2></div>
+      <ul><li><div class="copy-pair"><p lang="ja">授業由来パネルの公開権限、収量単位、上流データの来歴が不明確で、数値結果を公開できない。</p><p class="translation" lang="en">Publication rights, yield units, and upstream provenance for the course panel are unclear, so numeric results cannot be released.</p></div></li></ul>
+    </section>
+
+    <section class="publication" aria-labelledby="publication-title">
+      <div class="section-heading"><p>04</p><h2 id="publication-title">公開範囲 <span lang="en">Publication Boundary</span></h2></div>
+      <div class="publication-panel">
+        <p class="tier-badge"><span lang="ja">公開ケーススタディ</span><span lang="en">Public case study</span></p>
+        <div class="copy-pair"><p lang="ja">公開ページは評価設計と監査上の学びのみ。データ権利と来歴が未確認のため、実数値、図、市町村情報、派生結果、コードは公開しない。</p><p class="translation" lang="en">The public page is limited to evaluation design and audit lessons. Numeric results, figures, municipality details, derived results, and code remain private because data rights and provenance are unresolved.</p></div>
+      </div>
+      <div class="cta-grid"><a class="cta" href="https://github.com/kelly-wk/japan-mandarin-weather-panel"><strong lang="ja">リポジトリ</strong><span lang="en">Repository</span><span aria-hidden="true">↗</span></a><a class="cta" href="https://github.com/kelly-wk/japan-mandarin-weather-panel/blob/main/CASE_STUDY.md"><strong lang="ja">レポート</strong><span lang="en">Report</span><span aria-hidden="true">↗</span></a><span class="cta is-disabled" aria-disabled="true"><strong lang="ja">再現手順</strong><span lang="en">Reproduce</span><small>この公開レベルでは利用できません / Not available at this publication tier</small></span></div>
+    </section>
+  </main>
+
+  <footer>
+    <p><span lang="ja">公開レベルはページ上で常に明示されます。</span> <span lang="en">Publication tier is always shown explicitly.</span></p>
+    <p>kelly-wk · japan-mandarin-weather-panel</p>
+  </footer>
+</body>
+</html>
